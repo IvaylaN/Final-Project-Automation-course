@@ -1,0 +1,49 @@
+package pages;
+
+import java.time.Duration;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class Header extends BasePage{
+
+    WebDriverWait wait;
+    @FindBy(id = "homeIcon")
+    WebElement logoBtn;
+    @FindBy(id = "nav-link-home")
+    WebElement homeBtn;
+    @FindBy(id = "nav-link-profile")
+    WebElement profileBtn;
+    @FindBy(id = "nav-link-new-post")
+    WebElement newPostBtn;
+    @FindBy(id = "nav-link-login")
+    WebElement loginLink;
+
+    public Header(WebDriver driver) {
+        super(driver);
+        PageFactory.initElements(driver, this);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+    }
+
+    public void clickToLogo(){
+        clickElement(logoBtn);
+    }
+    public void goToProfile(){
+        clickElement(profileBtn);
+    }
+    public void goToHome(){
+        clickElement(homeBtn);
+    }
+
+    public void goToNewPost(){
+        clickElement(newPostBtn);
+    }
+
+    public void goToLogin() {
+        clickElement(loginLink);
+
+    }
+}
