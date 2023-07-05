@@ -9,7 +9,7 @@ Test 1 - Upload first photo (Prerequisites: It is a new profile and there are no
 8. Verify that the image is visible
 9. Submit a photo and check the number of posts
 
-Delete old post (Prerequisites: there is only one picture in All posts)
+Test 2 - Delete old post (Prerequisites: there is only one picture in All posts)
 1. Load ISkillo website and login 
 2. Go to profile page
 3. Click All posts
