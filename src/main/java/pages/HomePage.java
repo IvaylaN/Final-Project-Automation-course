@@ -9,9 +9,7 @@ public class HomePage {
     public HomePage(WebDriver driver) {
         this.driver = driver;
     }
-
     public void navigateTo(){
         driver.get(URL);
-
     }
 }

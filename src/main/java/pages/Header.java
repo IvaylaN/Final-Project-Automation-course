@@ -1,16 +1,14 @@
 package pages;
 
-import java.time.Duration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Header extends BasePage{
 
-    WebDriverWait wait;
+    //WebDriverWait wait;
     @FindBy(id = "homeIcon")
     WebElement logoBtn;
     @FindBy(id = "nav-link-home")
@@ -25,9 +23,7 @@ public class Header extends BasePage{
     public Header(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
-        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
-
     public void clickToLogo(){
         clickElement(logoBtn);
     }
@@ -37,13 +33,10 @@ public class Header extends BasePage{
     public void goToHome(){
         clickElement(homeBtn);
     }
-
     public void goToNewPost(){
         clickElement(newPostBtn);
     }
-
     public void goToLogin() {
         clickElement(loginLink);
-
     }
 }

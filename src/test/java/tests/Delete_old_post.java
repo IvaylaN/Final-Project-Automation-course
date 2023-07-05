@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.Header;
 import pages.ProfilePage;
@@ -20,8 +21,13 @@ public class Delete_old_post {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(13));
     }
-    @Test
-    public void deleteOldPost() {
+
+    @DataProvider(name = "getData")
+    public Object[][] getData() {
+        return new Object[][]{{"IvaNik", "adidas"}};
+    }
+    @Test(dataProvider = "getData")
+    public void deleteOldPost(String username, String password) {
 
         System.out.println("1. Load ISkillo website and login");
 
@@ -34,9 +40,7 @@ public class Delete_old_post {
         pages.LoginPage loginPage = new pages.LoginPage(driver);
         loginPage.checkURL();
 
-        loginPage.enterUserNameOrEmail();
-        loginPage.enterPass();
-        loginPage.clickSignInBtn();
+        loginPage.logIn(username, password);
 
         System.out.println("2. Go to profile page");
         headerPage.goToProfile();
@@ -57,6 +61,10 @@ public class Delete_old_post {
         System.out.println("7. Confirm that there are no posts");
         WebElement newPostBtnIsVisible = driver.findElement(By.xpath("//h3[text()='New post']"));
         Assert.assertTrue(newPostBtnIsVisible.isDisplayed());
+
+        profilePage.allPosts();
+        int existingPosts = profilePage.getCountOfPosts();
+        System.out.println("The number of posts is: " + existingPosts);
     }
 
     @AfterMethod

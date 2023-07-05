@@ -6,10 +6,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 
-public class LoginPage {
+public class LoginPage extends BasePage {
     private final String URLLogin = "http://training.skillo-bg.com/users/login";
     WebDriver driver;
     WebDriverWait wait;
@@ -23,11 +22,12 @@ public class LoginPage {
     WebElement signInBtn;
 
     public LoginPage(WebDriver driver) {
+        super(driver);
         this.driver = driver;
         PageFactory.initElements(driver, this);
-        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        //wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
-    public void enterUserNameOrEmail() {
+  /*  public void enterUserNameOrEmail() {
         wait.until(ExpectedConditions.visibilityOf(userNameField));
         userNameField.sendKeys("IvaNik");
     }
@@ -37,10 +37,23 @@ public class LoginPage {
     }
     public void clickSignInBtn() {
         wait.until(ExpectedConditions.elementToBeClickable(signInBtn));
-        signInBtn.click();
-    }
+        signInBtn.click();*/
+    //}
     public void checkURL() {
-        wait.until(ExpectedConditions.urlToBe(URLLogin));
-
+        checkURL(URLLogin);
+    }
+    public void enterUsername(String username) {
+        enterText(userNameField, username);
+    }
+    public void enterPassword(String password) {
+        enterText(passField, password);
+    }
+    public void clickSignIn() {
+        clickElement(signInBtn);
+    }
+    public void logIn(String username, String password) {
+        enterUsername(username);
+        enterPassword(password);
+        clickSignIn();
     }
 }
