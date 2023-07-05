@@ -1,27 +1,15 @@
 package tests;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.Header;
 import pages.ProfilePage;
-import java.time.Duration;
-public class Delete_old_post {
-    private WebDriver driver;
-    @BeforeMethod
-    public void setUp() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(13));
-    }
 
+public class DeleteOldPost extends BaseTestMethods {
+    //private WebDriver driver;
     @DataProvider(name = "getData")
     public Object[][] getData() {
         return new Object[][]{{"IvaNik", "adidas"}};
@@ -66,10 +54,4 @@ public class Delete_old_post {
         int existingPosts = profilePage.getCountOfPosts();
         System.out.println("The number of posts is: " + existingPosts);
     }
-
-    @AfterMethod
-    public void cleanUp() {
-        this.driver.close();
-    }
-
 }

@@ -9,7 +9,7 @@ import java.time.Duration;
 import java.util.List;
 
 public class ProfilePage extends BasePage {
-    WebDriverWait wait;
+    //WebDriverWait wait;
     @FindBy(css = ".post-img")
     WebElement postedPicture;
     @FindBy(css = ".btn-all")
@@ -26,7 +26,7 @@ public class ProfilePage extends BasePage {
     public ProfilePage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
-        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        //wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
     public void clickOnPost(){
         clickElement(postedPicture);

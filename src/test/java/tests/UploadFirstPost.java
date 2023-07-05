@@ -1,36 +1,20 @@
 package tests;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.Header;
 import pages.ProfilePage;
 import pages.UploadPostPage;
 import java.io.File;
-import java.time.Duration;
+public class UploadFirstPost extends BaseTestMethods {
 
-public class Upload_first_post {
-    private WebDriver driver;
-
-    @BeforeMethod
-    public void setUp() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(12));
-    }
-    @DataProvider(name = "getData")
+   @DataProvider(name = "getData")
     public Object[][] getData() {
         return new Object[][]{ {"IvaNik", "adidas", new File("src/upload/firstPost.jpg")}};
     }
     @Test(dataProvider = "getData")
-    public void deleteOldPost(String username, String password, File file) {
+    public void uploadPost(String username, String password, File file) {
 
         System.out.println("1. Load ISkillo website and login");
 
@@ -78,9 +62,5 @@ public class Upload_first_post {
         Assert.assertEquals(currentPostCount, existingPrivatePosts + 1, "Incorrect post number");
         System.out.println("The number of posts is: " + currentPostCount);
     }
-        @AfterMethod
-        public void clean() {
-            this.driver.close();
-        }
-    }
+}
 
