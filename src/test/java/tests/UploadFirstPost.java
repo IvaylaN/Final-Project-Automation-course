@@ -3,7 +3,7 @@ package tests;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import pages.Header;
+import pages.HeaderPage;
 import pages.ProfilePage;
 import pages.UploadPostPage;
 import java.io.File;
@@ -21,7 +21,7 @@ public class UploadFirstPost extends BaseTestMethods {
         pages.HomePage homePage = new pages.HomePage(driver);
         homePage.navigateTo();
 
-        Header headerPage = new Header(driver);
+        HeaderPage headerPage = new HeaderPage(driver);
         headerPage.goToLogin();
 
         pages.LoginPage loginPage = new pages.LoginPage(driver);

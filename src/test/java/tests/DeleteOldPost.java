@@ -5,7 +5,7 @@ import org.openqa.selenium.*;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import pages.Header;
+import pages.HeaderPage;
 import pages.ProfilePage;
 
 public class DeleteOldPost extends BaseTestMethods {
@@ -22,7 +22,7 @@ public class DeleteOldPost extends BaseTestMethods {
         pages.HomePage homePage = new pages.HomePage(driver);
         homePage.navigateTo();
 
-        Header headerPage = new Header(driver);
+        HeaderPage headerPage = new HeaderPage(driver);
         headerPage.goToLogin();
 
         pages.LoginPage loginPage = new pages.LoginPage(driver);
@@ -34,7 +34,7 @@ public class DeleteOldPost extends BaseTestMethods {
         headerPage.goToProfile();
 
         System.out.println("3. Click all posts");
-        pages.ProfilePage profilePage = new ProfilePage(driver);
+        ProfilePage profilePage = new ProfilePage(driver);
         profilePage.allPosts();
 
         System.out.println("4. Choose one of your posts");

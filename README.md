@@ -19,9 +19,18 @@ Test 2 - Delete old post (Prerequisites: there is only one picture in All posts)
 7. Confirm that there are no posts
 
 Test 3 - It is impossible to dislike posts with logged-out user (Prerequisites: Logged-out user)
-
 1. Load ISkillo website
 2. Load public posts and choose one
 3. Choose one post and click on it
 4. Verify that the chosen one is visible
 5. Verify that it is impossible to press dislike button
+
+Test 4 - The user is able to change his information using Modify Your Profile form 
+1. Load ISkillo website and login
+2. Go to profile page
+3. Click edit info button
+4. Verify visibility of Modify your profile window is shown
+5. Fill the field Public info
+6. Click Save btn
+7. Go to profile and to modified field
+8. Verify the entered text is visible

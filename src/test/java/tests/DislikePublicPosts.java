@@ -9,11 +9,12 @@ public class DislikePublicPosts extends BaseTestMethods {
     public void tryToDislikePost(){
         System.out.println("1. Load ISkillo website");
 
+
         pages.HomePage homePage = new pages.HomePage(driver);
         homePage.navigateTo();
 
         System.out.println("2. Load public posts and choose one");
-        pages.PublicPostsPage publicPosts = new PublicPostsPage(driver);
+        PublicPostsPage publicPosts = new PublicPostsPage(driver);
         //publicPosts.waitToLoadAllPosts();
         int countAllPosts = publicPosts.getCountOfPosts();
         System.out.println("The number of All visible posts is: " + countAllPosts);
