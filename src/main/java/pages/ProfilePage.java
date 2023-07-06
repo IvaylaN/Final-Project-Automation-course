@@ -4,11 +4,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 
 public class ProfilePage extends BasePage {
-    //WebDriverWait wait;
     @FindBy(css = ".post-img")
     WebElement postedPicture;
     @FindBy(css = ".btn-all")
@@ -21,12 +21,17 @@ public class ProfilePage extends BasePage {
     WebElement confirmDelete;
     @FindBy(css="app-post")
     List<WebElement> existingPosts;
+    @FindBy(id = "search-bar")
+    WebElement searchField;
+    @FindBy(css = ".fas.fa-search")
+    WebElement searchBtn;
+    @FindBy(css = ".dropdown-container")
+    WebElement dropDownBoxAfterPressedSearch;
 
     public ProfilePage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
-        //wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-    }
+   }
     public void clickOnPost(){
         clickElement(postedPicture);
     }
@@ -43,6 +48,22 @@ public class ProfilePage extends BasePage {
         clickElement(goToPrivatePosts);
     }
     public int getCountOfPosts(){
-        return  existingPosts.size();}
+        return  existingPosts.size();
+    }
+    public void chooseSearchField(){
+        clickElement(searchField);
+    }
+    public void waitForSearchFieldToShow() {
+        smallWait.until(ExpectedConditions.elementToBeClickable(searchField));
+    }
+    public void enterLetterInSearchField(){
+        searchField.sendKeys("t");
+    }
+    public void pressSearchBtn(){
+        clickElement(searchBtn);
+    }
+    public void waitForDropBoxToShow() {
+        bigWait.until(ExpectedConditions.visibilityOf(dropDownBoxAfterPressedSearch));
+    }
 }
 

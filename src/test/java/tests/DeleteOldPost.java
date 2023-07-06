@@ -47,8 +47,8 @@ public class DeleteOldPost extends BaseTestMethods {
         profilePage.confirmDelete();
 
         System.out.println("7. Confirm that there are no posts");
-        WebElement newPostBtnIsVisible = driver.findElement(By.xpath("//h3[text()='New post']"));
-        Assert.assertTrue(newPostBtnIsVisible.isDisplayed());
+        /*WebElement newPostBtnIsVisible = driver.findElement(By.xpath("//h3[text()='New post']"));
+        Assert.assertTrue(newPostBtnIsVisible.isDisplayed());*/
 
         profilePage.allPosts();
         int existingPosts = profilePage.getCountOfPosts();

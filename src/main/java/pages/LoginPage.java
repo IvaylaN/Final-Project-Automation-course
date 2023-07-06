@@ -10,8 +10,6 @@ import java.time.Duration;
 
 public class LoginPage extends BasePage {
     private final String URLLogin = "http://training.skillo-bg.com/users/login";
-    WebDriver driver;
-    WebDriverWait wait;
     @FindBy(css = "form .h4")
     WebElement signInText;
     @FindBy(name = "usernameOrEmail")
@@ -25,7 +23,6 @@ public class LoginPage extends BasePage {
         super(driver);
         this.driver = driver;
         PageFactory.initElements(driver, this);
-        //wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
   /*  public void enterUserNameOrEmail() {
         wait.until(ExpectedConditions.visibilityOf(userNameField));
@@ -52,6 +49,7 @@ public class LoginPage extends BasePage {
         clickElement(signInBtn);
     }
     public void logIn(String username, String password) {
+
         enterUsername(username);
         enterPassword(password);
         clickSignIn();

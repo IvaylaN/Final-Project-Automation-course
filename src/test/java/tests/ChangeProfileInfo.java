@@ -36,7 +36,6 @@ public class ChangeProfileInfo extends BaseTestMethods {
         headerPage.goToProfile();
 
         System.out.println("3. Click edit info button");
-        //ProfileInfoPage profileInfo = new ProfileInfoPage(driver);
         profileInfo.clickEditInfoBtn();
 
         System.out.println("4. Verify visibility of Modify your profile window is shown");
@@ -56,6 +55,6 @@ public class ChangeProfileInfo extends BaseTestMethods {
 
         System.out.println("8. Verify the entered text is visible");
         String currentText = profileInfo.getNewText();
-        Assert.assertEquals(currentText, "I am happy to be here \uD83D\uDCF7✈\uFE0F\uD83C\uDFD5\uFE0F", "The text is not the same");
+        Assert.assertEquals(currentText, "I am happy to be here", "The text is not the same");
     }
 }

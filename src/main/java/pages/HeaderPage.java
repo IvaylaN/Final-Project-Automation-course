@@ -6,8 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class HeaderPage extends BasePage{
-
-    //WebDriverWait wait;
+    //private WebDriver driver;
     @FindBy(id = "homeIcon")
     WebElement logoBtn;
     @FindBy(id = "nav-link-home")

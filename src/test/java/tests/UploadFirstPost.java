@@ -11,26 +11,24 @@ public class UploadFirstPost extends BaseTestMethods {
 
    @DataProvider(name = "getData")
     public Object[][] getData() {
-        return new Object[][]{ {"IvaNik", "adidas", new File("src/upload/firstPost.jpg")}};
+        return new Object[][]{ {"IvaNik", "adidas", new File("src/test/resources/upload/firstPost.jpg")}};
     }
     @Test(dataProvider = "getData")
     public void uploadPost(String username, String password, File file) {
 
         System.out.println("1. Load ISkillo website and login");
-
         pages.HomePage homePage = new pages.HomePage(driver);
         homePage.navigateTo();
-
         HeaderPage headerPage = new HeaderPage(driver);
         headerPage.goToLogin();
-
         pages.LoginPage loginPage = new pages.LoginPage(driver);
         loginPage.checkURL();
-
         loginPage.logIn(username, password);
 
         System.out.println("2. Go to profile page");
         headerPage.goToProfile();
+        pages.UploadPostPage postPage = new UploadPostPage(driver);
+        postPage.checkURL();
 
         System.out.println("3. Go to All posts");
         ProfilePage profilePage = new ProfilePage(driver);
@@ -49,7 +47,6 @@ public class UploadFirstPost extends BaseTestMethods {
 
         System.out.println("7. Upload first photo");
         headerPage.goToNewPost();
-        pages.UploadPostPage postPage = new UploadPostPage(driver);
         postPage.uploadImage(file);
 
         System.out.println("8. Verify that the image is visible");

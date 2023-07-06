@@ -8,8 +8,6 @@ public class DislikePublicPosts extends BaseTestMethods {
     @Test
     public void tryToDislikePost(){
         System.out.println("1. Load ISkillo website");
-
-
         pages.HomePage homePage = new pages.HomePage(driver);
         homePage.navigateTo();
 
@@ -28,6 +26,6 @@ public class DislikePublicPosts extends BaseTestMethods {
         System.out.println("5. Verify that it is impossible to press dislike button");
         publicPosts.clickDislikeBtn();
         Boolean ableBtn = Boolean.FALSE;
-        Assert.assertTrue(ableBtn, "We can press the button");
+        Assert.assertTrue(ableBtn, "It is possible to press the button");
     }
 }

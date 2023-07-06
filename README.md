@@ -34,3 +34,9 @@ Test 4 ChangeProfileInfo - The user is able to change his information using Modi
 6. Click Save btn
 7. Go to profile and to modified field
 8. Verify the entered text is visible
+
+Test 5 SeachField - The search field is available only for the logged users
+1. Load ISkillo website and login
+2. Go to search field
+3. Enter a letter in Search field and press search btn
+4. Verify the results are shown
