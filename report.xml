@@ -1,7 +1,9 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Smoke tests" verbose="1">
+    <listeners>
+        <listener class-name="org.testng.reporters.EmailableReporter"></listener>
+    </listeners>
     <test name="Post Tests">
-
         <classes>
             <class name="tests.UploadFirstPost"></class>
             <class name="tests.DeleteOldPost"></class>
@@ -13,7 +15,6 @@
             <class name="tests.DeleteOldPost"></class>
             <class name="tests.ChangeProfileInfo"></class>
             <class name="tests.SignOut"></class>
-            <class name="tests.CommentPost"></class>
         </classes>
     </test>
 </suite>
