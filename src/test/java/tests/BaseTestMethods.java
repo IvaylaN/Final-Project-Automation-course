@@ -27,7 +27,7 @@ public class BaseTestMethods {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(13));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(18));
     }
 
     private void takeScreenShot(ITestResult testResult) {

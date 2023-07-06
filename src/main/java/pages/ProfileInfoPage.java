@@ -11,7 +11,7 @@ public class ProfileInfoPage extends BasePage {
     WebElement editInfoBtn;
     @FindBy(xpath = "//h4[text()='Modify Your Profile']")
     WebElement verifyWindow;
-    @FindBy(partialLinkText = "I am happy to be here")
+    @FindBy(xpath = "//p[contains(text(), 'I am happy to be here \uD83D\uDCF7✈\uFE0F\uD83C\uDFD5\uFE0F')]")
     WebElement fieldAfterModify;
     @FindBy(css= "textarea.form-control")
     WebElement publicInfoField;
@@ -50,5 +50,5 @@ public class ProfileInfoPage extends BasePage {
     }
     public void goToFieldAfterModify(){
         clickElement(fieldAfterModify);
-    }
+}
 }

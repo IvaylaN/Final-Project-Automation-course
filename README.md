@@ -40,3 +40,17 @@ Test 5 SeachField - The search field is available only for the logged users
 2. Go to search field
 3. Enter a letter in Search field and press search btn
 4. Verify the results are shown
+
+Test 6 Sign out 
+1. Load ISkillo website and login
+2. Go to profile to verify successful log in
+3. Go to and press sign out btn
+4. Choose Login to verify you are logged out
+
+Test 7 CommentPost
+1. Load ISkillo website and login
+2. Go to profile page
+3. Choose and open other user post
+4. Go to comment field
+5. Enter text in Comment field
+5. Enter text in Comment field

@@ -14,7 +14,6 @@ public class UploadPostPage extends BasePage {
     WebElement submitBtn;
     @FindBy(css = ".image-preview")
     WebElement imagePreview;
-
     public UploadPostPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);

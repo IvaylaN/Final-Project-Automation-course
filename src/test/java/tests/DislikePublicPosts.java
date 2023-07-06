@@ -6,7 +6,7 @@ import pages.PublicPostsPage;
 
 public class DislikePublicPosts extends BaseTestMethods {
     @Test
-    public void tryToDislikePost(){
+    public void DislikePublicPostst(){
         System.out.println("1. Load ISkillo website");
         pages.HomePage homePage = new pages.HomePage(driver);
         homePage.navigateTo();

@@ -11,6 +11,7 @@
             <class name="tests.DislikePublicPosts"></class>
             <class name="tests.DeleteOldPost"></class>
             <class name="tests.ChangeProfileInfo"></class>
+            <class name="tests.SignOut"></class>
         </classes>
     </test>
 </suite>

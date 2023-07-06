@@ -15,10 +15,9 @@ public class DeleteOldPost extends BaseTestMethods {
         return new Object[][]{{"IvaNik", "adidas"}};
     }
     @Test(dataProvider = "getData")
-    public void deleteOldPost(String username, String password) {
+    public void DeleteOldPost(String username, String password) {
 
         System.out.println("1. Load ISkillo website and login");
-
         pages.HomePage homePage = new pages.HomePage(driver);
         homePage.navigateTo();
 
@@ -27,7 +26,6 @@ public class DeleteOldPost extends BaseTestMethods {
 
         pages.LoginPage loginPage = new pages.LoginPage(driver);
         loginPage.checkURL();
-
         loginPage.logIn(username, password);
 
         System.out.println("2. Go to profile page");
@@ -47,11 +45,11 @@ public class DeleteOldPost extends BaseTestMethods {
         profilePage.confirmDelete();
 
         System.out.println("7. Confirm that there are no posts");
-        /*WebElement newPostBtnIsVisible = driver.findElement(By.xpath("//h3[text()='New post']"));
-        Assert.assertTrue(newPostBtnIsVisible.isDisplayed());*/
-
         profilePage.allPosts();
         int existingPosts = profilePage.getCountOfPosts();
+        /*int currentPostCount = profilePage.getCountOfPosts();
+        Assert.assertEquals(currentPostCount, existingPosts - 1, "Incorrect post number");
+        System.out.println("The number of posts is: " + currentPostCount);*/
         System.out.println("The number of posts is: " + existingPosts);
     }
 }

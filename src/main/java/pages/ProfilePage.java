@@ -5,7 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
 import java.util.List;
 
 public class ProfilePage extends BasePage {
@@ -27,11 +26,14 @@ public class ProfilePage extends BasePage {
     WebElement searchBtn;
     @FindBy(css = ".dropdown-container")
     WebElement dropDownBoxAfterPressedSearch;
-
+    @FindBy(css=".post-feed-img")
+    WebElement userPost;
+    @FindBy(css = "input.form-control.ng-untouched.ng-pristine.ng-invalid")
+    WebElement fileNameField;
     public ProfilePage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
-   }
+    }
     public void clickOnPost(){
         clickElement(postedPicture);
     }
@@ -65,5 +67,10 @@ public class ProfilePage extends BasePage {
     public void waitForDropBoxToShow() {
         bigWait.until(ExpectedConditions.visibilityOf(dropDownBoxAfterPressedSearch));
     }
+    public  void chooseUserPublicPost(){
+        clickElement(userPost);
+    }
+
+
 }
 

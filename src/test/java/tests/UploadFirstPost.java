@@ -14,13 +14,15 @@ public class UploadFirstPost extends BaseTestMethods {
         return new Object[][]{ {"IvaNik", "adidas", new File("src/test/resources/upload/firstPost.jpg")}};
     }
     @Test(dataProvider = "getData")
-    public void uploadPost(String username, String password, File file) {
+    public void UploadFirstPost(String username, String password, File file) {
 
         System.out.println("1. Load ISkillo website and login");
         pages.HomePage homePage = new pages.HomePage(driver);
         homePage.navigateTo();
-        HeaderPage headerPage = new HeaderPage(driver);
+
+        pages.HeaderPage headerPage = new pages.HeaderPage(driver);
         headerPage.goToLogin();
+
         pages.LoginPage loginPage = new pages.LoginPage(driver);
         loginPage.checkURL();
         loginPage.logIn(username, password);

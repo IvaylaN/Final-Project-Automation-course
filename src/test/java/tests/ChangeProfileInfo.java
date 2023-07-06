@@ -16,7 +16,7 @@ public class ChangeProfileInfo extends BaseTestMethods {
         return new Object[][]{{"IvaNik", "adidas"}};
     }
     @Test(dataProvider = "getData")
-    public void uploadPost(String username, String password) {
+    public void ChangeProfileInfot(String username, String password) {
 
         System.out.println("1. Load ISkillo website and login");
         pages.HomePage homePage = new pages.HomePage(driver);

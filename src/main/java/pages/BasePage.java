@@ -14,6 +14,7 @@ public class BasePage {
         mediumWait = new WebDriverWait(driver, Duration.ofSeconds(15));
         bigWait = new WebDriverWait(driver, Duration.ofSeconds(40));
     }
+
     protected WebDriver driver;
     protected WebDriverWait smallWait;
     protected WebDriverWait mediumWait;
