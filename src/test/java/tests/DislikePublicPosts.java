@@ -13,7 +13,6 @@ public class DislikePublicPosts extends BaseTestMethods {
 
         System.out.println("2. Load public posts and choose one");
         PublicPostsPage publicPosts = new PublicPostsPage(driver);
-        //publicPosts.waitToLoadAllPosts();
         int countAllPosts = publicPosts.getCountOfPosts();
         System.out.println("The number of All visible posts is: " + countAllPosts);
 

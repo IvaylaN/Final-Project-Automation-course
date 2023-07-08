@@ -13,6 +13,10 @@ public class CommentPostPage extends BasePage {
     @FindBy(css = ".col-12.comment-content")
     WebElement newCommentField;
 
+    @FindBy(xpath = "//div[contains(text(), 'So nice picture')]")
+    WebElement newVisibleComment;
+
+
     public CommentPostPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
@@ -21,16 +25,19 @@ public class CommentPostPage extends BasePage {
         clickElement(fileNameField);
     }
     public void enterTextInCommentField() {
-        fileNameField.sendKeys("So nice picture");
+        fileNameField.sendKeys("So nice picture" + "\n");
     }
     public void clearFileNameField(){
         fileNameField.clear();
     }
-    public void goToNewComment(){
+    public void goToFieldWithNewComment(){
         clickElement(newCommentField);
     }
  /*   public void getNewComment(){
         smallWait.until(ExpectedConditions.visibilityOf((WebElement) By.partialLinkText(".col-12.comment-content")));
     }*/
-
+    public String getNewComment(){
+        smallWait.until(ExpectedConditions.visibilityOf(newVisibleComment));
+        return newVisibleComment.getText();
+    }
 }

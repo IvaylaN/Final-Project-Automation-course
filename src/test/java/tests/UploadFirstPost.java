@@ -3,7 +3,6 @@ package tests;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import pages.HeaderPage;
 import pages.ProfilePage;
 import pages.UploadPostPage;
 import java.io.File;

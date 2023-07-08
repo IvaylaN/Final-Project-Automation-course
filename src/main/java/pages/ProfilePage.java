@@ -70,7 +70,5 @@ public class ProfilePage extends BasePage {
     public  void chooseUserPublicPost(){
         clickElement(userPost);
     }
-
-
 }
 

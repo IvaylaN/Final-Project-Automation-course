@@ -45,7 +45,7 @@ public class ProfileInfoPage extends BasePage {
     public void goToPublicInfoField(){
         clickElement(publicInfoField);
     }
-   public void waitForPageToBeVisible() {
+    public void waitForPageToBeVisible() {
         mediumWait.until(ExpectedConditions.visibilityOf(profileBtn));
     }
     public void goToFieldAfterModify(){
