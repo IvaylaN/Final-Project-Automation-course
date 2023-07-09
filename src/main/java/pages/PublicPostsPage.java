@@ -13,6 +13,13 @@ public class PublicPostsPage extends BasePage{
     WebElement onePostedPicture;
     @FindBy(css = ".fa-thumbs-down")
     WebElement dislikeBtn;
+    @FindBy(css=".post-user")
+    List<WebElement> existingUsers;
+    @FindBy(css=".btn-primary.profile-edit-btn.ng-star-inserted")
+    WebElement otherUserFollowOrUnfollowBtn;
+
+    @FindBy(css = ".btn-all")
+    WebElement otherUserAllPostsBtn;
     public PublicPostsPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
@@ -27,5 +34,23 @@ public class PublicPostsPage extends BasePage{
     }
     public void waitToSeeThePost() {
         smallWait.until(ExpectedConditions.visibilityOf(onePostedPicture));
+    }
+
+    public void openUserByIndex(int index){
+        clickElement(existingUsers.get(index));
+    }
+    public void waitForProfileToShow() {
+        smallWait.until(ExpectedConditions.visibilityOf(existingUsers.get(0)));
+    }
+
+    public void waitForFollowBtnOrUnfollowToShow() {
+        smallWait.until(ExpectedConditions.elementToBeClickable(otherUserFollowOrUnfollowBtn));
+    }
+    public void chooseToFollowOrUnfollowUser(){
+        clickElement(otherUserFollowOrUnfollowBtn);
+    }
+
+    public void chooseOtherUserAllPostsBtn(){
+        clickElement(otherUserAllPostsBtn);
     }
 }

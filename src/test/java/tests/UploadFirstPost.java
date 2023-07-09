@@ -13,7 +13,7 @@ public class UploadFirstPost extends BaseTestMethods {
         return new Object[][]{ {"IvaNik", "adidas", new File("src/test/resources/upload/firstPost.jpg")}};
     }
     @Test(dataProvider = "getData")
-    public void UploadFirstPost(String username, String password, File file) {
+    public void uploadFirstPost(String username, String password, File file) {
 
         System.out.println("1. Load ISkillo website and login");
         pages.HomePage homePage = new pages.HomePage(driver);

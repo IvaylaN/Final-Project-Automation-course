@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import java.io.File;
 import java.util.List;
 
 public class ProfilePage extends BasePage {
@@ -30,6 +32,8 @@ public class ProfilePage extends BasePage {
     WebElement userPost;
     @FindBy(css = "input.form-control.ng-untouched.ng-pristine.ng-invalid")
     WebElement fileNameField;
+    @FindBy(css = "input[type='file']")
+    WebElement profilePicture;
     public ProfilePage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
@@ -70,5 +74,6 @@ public class ProfilePage extends BasePage {
     public  void chooseUserPublicPost(){
         clickElement(userPost);
     }
+
 }
 

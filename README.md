@@ -54,3 +54,11 @@ Test 7 CommentPost - Comment other user post after Login in
 4. Go to comment field
 5. Enter text in Comment field
 6. Go to new comment and verify it is visible
+
+Test 8 GoToOtherUser -  Follow other user from public post when you are logged in
+1. Load ISkillo website and login
+2. Load public posts and choose some user profile
+3. Verify you can see user profile and Follow btn is shown
+4. Follow the user and go to his All posts
+5. Unfollow the user and go to his All posts
+6. Verify All posts user btn is unable when you unfollow him

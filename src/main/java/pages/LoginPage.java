@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 public class LoginPage extends BasePage {
     private final String URLLogin = "http://training.skillo-bg.com/users/login";
     @FindBy(css = "form .h4")

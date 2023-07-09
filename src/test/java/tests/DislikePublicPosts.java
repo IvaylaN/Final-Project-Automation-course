@@ -6,8 +6,8 @@ import pages.PublicPostsPage;
 
 public class DislikePublicPosts extends BaseTestMethods {
     @Test
-    public void DislikePublicPostst(){
-        System.out.println("1. Load ISkillo website");
+    public void dislikePublicPost(){
+        System.out.println("1. Load ISkillo website and verify Login btn is visible");
         pages.HomePage homePage = new pages.HomePage(driver);
         homePage.navigateTo();
 

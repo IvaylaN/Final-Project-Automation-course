@@ -13,7 +13,7 @@ public class CommentPost extends BaseTestMethods {
         return new Object[][]{{"IvaNik", "adidas"}};
     }
     @Test(dataProvider = "getData")
-        public void CommentPost(String username, String password) {
+        public void commentUserPost(String username, String password) {
 
         System.out.println("1. Load ISkillo website and login");
         pages.HomePage homePage = new pages.HomePage(driver);
@@ -45,7 +45,7 @@ public class CommentPost extends BaseTestMethods {
         System.out.println("6. Go to new comment and verify it is visible");
         commentPost.goToFieldWithNewComment();
         String currentText = commentPost.getNewComment();
-        Assert.assertEquals(currentText, "So nice picture1", "The text is not the same");
+        Assert.assertEquals(currentText, "So nice picture", "The text is not the same");
 
     }
 }

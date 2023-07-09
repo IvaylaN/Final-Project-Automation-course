@@ -5,7 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
-
 public class BasePage {
 
     public BasePage(WebDriver driver) {
@@ -14,7 +13,6 @@ public class BasePage {
         mediumWait = new WebDriverWait(driver, Duration.ofSeconds(15));
         bigWait = new WebDriverWait(driver, Duration.ofSeconds(40));
     }
-
     protected WebDriver driver;
     protected WebDriverWait smallWait;
     protected WebDriverWait mediumWait;
@@ -30,5 +28,4 @@ public class BasePage {
     public void checkURL(String url) {
         mediumWait.until(ExpectedConditions.urlToBe(url));
     }
-
 }
