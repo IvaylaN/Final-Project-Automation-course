@@ -14,6 +14,7 @@
             <class name="tests.ChangeProfileInfo"></class>
             <class name="tests.SignOut"></class>
             <class name="tests.CommentPost"></class>
+            <class name="tests.GoToOtherUser"></class>
         </classes>
     </test>
 </suite>
