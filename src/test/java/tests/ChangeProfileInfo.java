@@ -36,7 +36,7 @@ public class ChangeProfileInfo extends BaseTestMethods {
         profileInfo.clickEditInfoBtn();
 
         System.out.println("4. Verify visibility of Modify your profile window is shown");
-        profileInfo.checkVerifyWindow();
+        profileInfo.checkWindow();
 
         System.out.println("5. Fill the field Public info");
         profileInfo.goToPublicInfoField();

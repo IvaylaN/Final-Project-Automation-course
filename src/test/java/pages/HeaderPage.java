@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 public class HeaderPage extends BasePage{
     @FindBy(id = "homeIcon")
     WebElement logoBtn;
@@ -16,7 +15,7 @@ public class HeaderPage extends BasePage{
     WebElement newPostBtn;
     @FindBy(id = "nav-link-login")
     WebElement loginLink;
-    @FindBy(css = ".fas.fa-sign-out-alt.fa-lg")
+    @FindBy(css = ".fa-sign-out-alt")
     WebElement signOutBtn;
     public HeaderPage(WebDriver driver) {
         super(driver);

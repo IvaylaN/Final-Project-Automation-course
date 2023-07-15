@@ -10,8 +10,8 @@ import org.testng.Assert;
 public class ProfileInfoPage extends BasePage {
     @FindBy(css = ".fa-user-edit")
     WebElement editInfoBtn;
-    @FindBy(xpath = "//h4[text()='Modify Your Profile']")
-    WebElement verifyWindow;
+    @FindBy(css = ".modal-content h4")
+    WebElement checkWindow;
     @FindBy(css = "app-profile-section p")
     WebElement fieldAfterModify;
     @FindBy(css= "textarea.form-control")
@@ -29,16 +29,12 @@ public class ProfileInfoPage extends BasePage {
     public void clickEditInfoBtn() {
         clickElement(editInfoBtn);
     }
-    public void checkVerifyWindow() {
-        waitForVisibility(verifyWindow);
+    public void checkWindow() {
+        waitForVisibility(checkWindow);
     }
     public void pressSaveInfoBtn(){
         clickElement(saveBtn);
     }
-    /*public String getNewText(){
-        waitForVisibility(fieldAfterModify);
-        return fieldAfterModify.getText();
-    }*/
     public void goToPublicInfoField(){
         clickElement(publicInfoField);
     }

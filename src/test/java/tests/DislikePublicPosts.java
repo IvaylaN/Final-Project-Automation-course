@@ -1,9 +1,7 @@
 package tests;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.PublicPostsPage;
-
 public class DislikePublicPosts extends BaseTestMethods {
     @Test
     public void dislikePublicPost(){

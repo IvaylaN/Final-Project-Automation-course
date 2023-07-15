@@ -9,7 +9,6 @@ public class SignOut extends BaseTestMethods {
     }
     @Test(dataProvider = "getData")
     public void usesCanSignOut(String username, String password) {
-
         System.out.println("1. Load ISkillo website and login");
         pages.HomePage homePage = new pages.HomePage(driver);
         homePage.navigateTo();

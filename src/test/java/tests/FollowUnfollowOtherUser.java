@@ -1,11 +1,9 @@
 package tests;
 
-import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.HeaderPage;
 import pages.PublicPostsPage;
-
 public class FollowUnfollowOtherUser extends BaseTestMethods {
     @DataProvider(name = "getData")
     public Object[][] getData() {
@@ -28,23 +26,21 @@ public class FollowUnfollowOtherUser extends BaseTestMethods {
         System.out.println("2. Load public posts and choose some user profile");
         headerPage.goToHome();
         PublicPostsPage publicPostsPage = new PublicPostsPage(driver);
-        publicPostsPage.openUserByIndex(0);
+        publicPostsPage.openUserByIndex(1);
 
         System.out.println("3. Verify you can see user profile and Follow btn is shown");
         publicPostsPage.waitForProfileToShow();
         publicPostsPage.waitForFollowBtnOrUnfollowToShow();
 
         System.out.println("4. Follow the user and go to his All posts");
-        publicPostsPage.chooseToFollowOrUnfollowUser();
+        publicPostsPage.pressFollowUnfollowBtn();
         publicPostsPage.chooseOtherUserAllPostsBtn();
 
         System.out.println("5. Unfollow the user");
-        publicPostsPage.chooseToFollowOrUnfollowUser();
-        //publicPostsPage.chooseOtherUserAllPostsBtn();
+        publicPostsPage.pressFollowUnfollowBtn();
 
         System.out.println("6. Verify All posts user btn is unable when you unfollow him");
         publicPostsPage.checkVisibilityOfAllPostBtn();
-
-        //лист с елементи, да има текст follow - добавен prerequisites
+        //да добавя ред, ако е follow, да избере следващия, а не да фейлва.
     }
 }
