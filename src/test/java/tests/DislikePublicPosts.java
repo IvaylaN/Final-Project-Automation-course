@@ -11,20 +11,18 @@ public class DislikePublicPosts extends BaseTestMethods {
         pages.HomePage homePage = new pages.HomePage(driver);
         homePage.navigateTo();
 
-        System.out.println("2. Load public posts and choose one");
+        System.out.println("2. Choose one post and click on it");
         PublicPostsPage publicPosts = new PublicPostsPage(driver);
-        int countAllPosts = publicPosts.getCountOfPosts();
-        System.out.println("The number of All visible posts is: " + countAllPosts);
-
-        System.out.println("3. Choose one post and click on it");
         publicPosts.choosePublicPost();
 
-        System.out.println("4. Verify that the chosen one is visible");
+        System.out.println("3. Verify that the chosen one is visible");
         publicPosts.waitToSeeThePost();
 
-        System.out.println("5. Verify that it is impossible to press dislike button");
+        System.out.println("4. Verify that it is impossible to press dislike button. When you press it you must be redirected to Login page");
         publicPosts.clickDislikeBtn();
-        Boolean ableBtn = Boolean.FALSE;
-        Assert.assertTrue(ableBtn, "It is possible to press the button");
-    }
+
+        pages.LoginPage loginPage = new pages.LoginPage(driver);
+        loginPage.checkURL();
+        //publicPosts.waitForDialogDisappear(); като натиснеш dislike модала не се затваря
+        }
 }

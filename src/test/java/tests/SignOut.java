@@ -29,5 +29,6 @@ public class SignOut extends BaseTestMethods {
 
         System.out.println("4. Choose Login to verify you are logged out");
         headerPage.goToLogin();
+        loginPage.checkURL();
     }
 }

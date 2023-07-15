@@ -25,7 +25,7 @@ public class LoginPage extends BasePage {
     public void enterUsername(String username) {
         enterText(userNameField, username);
     }
-    public void enterPassword(String password) {
+   public void enterPassword(String password) {
         enterText(passField, password);
     }
     public void clickSignIn() {

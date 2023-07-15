@@ -1,20 +1,16 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="Smoke tests" verbose="1">
-    <test name="Post Tests">
 
-        <classes>
-            <class name="tests.UploadFirstPost"></class>
-            <class name="tests.DeleteOldPost"></class>
-        </classes>
-    </test>
-    <test name="Other Tests">
-        <classes>
-            <class name="tests.DislikePublicPosts"></class>
-            <class name="tests.DeleteOldPost"></class>
-            <class name="tests.ChangeProfileInfo"></class>
-            <class name="tests.SignOut"></class>
-            <class name="tests.CommentPost"></class>
-            <class name="tests.GoToOtherUser"></class>
-        </classes>
-    </test>
+<suite name="Web test suite" verbose="1">
+<test name="Regression Tests">
+    <classes>
+        <class name="tests.UploadFirstPost"></class>
+        <class name="tests.DeleteOldPost"></class>
+        <class name="tests.SignOut"></class>
+        <class name="tests.DislikePublicPosts"></class>
+        <class name="tests.SearchField"></class>
+        <class name="tests.ChangeProfileInfo"></class>
+        <class name="tests.CommentPost"></class>
+        <class name="tests.FollowUnfollowOtherUser"></class>
+    </classes>
+</test>
 </suite>

@@ -6,7 +6,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 public class BasePage {
-
     public BasePage(WebDriver driver) {
         this.driver = driver;
         smallWait = new WebDriverWait(driver, Duration.ofSeconds(3));
@@ -27,5 +26,8 @@ public class BasePage {
     }
     public void checkURL(String url) {
         mediumWait.until(ExpectedConditions.urlToBe(url));
+    }
+    public void waitForVisibility(WebElement element){
+        smallWait.until(ExpectedConditions.visibilityOf(element));
     }
 }

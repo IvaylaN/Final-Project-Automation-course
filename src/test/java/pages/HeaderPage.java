@@ -4,10 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class HeaderPage extends BasePage{
-
     @FindBy(id = "homeIcon")
     WebElement logoBtn;
     @FindBy(id = "nav-link-home")
@@ -42,5 +40,7 @@ public class HeaderPage extends BasePage{
     public void chooseSignOutBtn(){
         clickElement(signOutBtn);
     }
-
+    public void waitForNewPostBtnVisible() {
+        waitForVisibility(newPostBtn);
+    }
 }
