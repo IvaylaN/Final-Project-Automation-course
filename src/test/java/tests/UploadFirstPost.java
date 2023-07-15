@@ -40,6 +40,7 @@ public class UploadFirstPost extends BaseTestMethods {
         System.out.println("The number of All posts is: " + existingAllPosts);
 
         System.out.println("5. Go to Private posts");
+
         profilePage.privatePosts();
 
         System.out.println("6. Check that there is no posts in Private posts");
@@ -59,6 +60,7 @@ public class UploadFirstPost extends BaseTestMethods {
         int currentPostCount = profilePage.getCountOfPosts();
         Assert.assertEquals(currentPostCount, existingPrivatePosts + 1, "Incorrect post number");
         System.out.println("The number of posts is: " + currentPostCount);
+        //da proverq i all posts
     }
 }
 

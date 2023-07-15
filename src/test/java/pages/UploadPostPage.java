@@ -25,7 +25,7 @@ public class UploadPostPage extends BasePage {
         clickElement(submitBtn);
     }
     public void waitForImageToShow() {
-        smallWait.until(ExpectedConditions.visibilityOf(imagePreview));
+        waitForVisibility(imagePreview);
     }
     public void checkURL() {
         checkURL(URL);

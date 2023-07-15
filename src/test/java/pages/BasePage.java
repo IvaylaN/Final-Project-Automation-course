@@ -28,4 +28,7 @@ public class BasePage {
     public void checkURL(String url) {
         mediumWait.until(ExpectedConditions.urlToBe(url));
     }
+    public void waitForVisibility(WebElement element){
+        smallWait.until(ExpectedConditions.visibilityOf(element));
+    }
 }

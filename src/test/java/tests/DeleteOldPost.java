@@ -1,7 +1,6 @@
 package tests;
 
 
-import org.openqa.selenium.*;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -31,11 +30,14 @@ public class DeleteOldPost extends BaseTestMethods {
         System.out.println("2. Go to profile page");
         headerPage.goToProfile();
 
-        System.out.println("3. Click all posts");
+        System.out.println("3. Click all posts and show their number");
         ProfilePage profilePage = new ProfilePage(driver);
         profilePage.allPosts();
 
-        System.out.println("4. Choose one of your posts");
+        int currentPostCount = profilePage.getCountOfPosts();
+        System.out.println("The number of posts is: " + currentPostCount);
+
+        System.out.println("4. Choose the post");
         profilePage.clickOnPost();
 
         System.out.println("5. Choose delete post");
@@ -44,12 +46,11 @@ public class DeleteOldPost extends BaseTestMethods {
         System.out.println("6. Choose option Yes");
         profilePage.confirmDelete();
 
-        System.out.println("7. Confirm that there are no posts");
+        System.out.println("7. Confirm that there are no posts and show their number");
         profilePage.allPosts();
         int existingPosts = profilePage.getCountOfPosts();
-        /*int currentPostCount = profilePage.getCountOfPosts();
-        Assert.assertEquals(currentPostCount, existingPosts - 1, "Incorrect post number");
-        System.out.println("The number of posts is: " + currentPostCount);*/
+
+        Assert.assertEquals(existingPosts,currentPostCount  - 1, "Incorrect post number");
         System.out.println("The number of posts is: " + existingPosts);
     }
 }

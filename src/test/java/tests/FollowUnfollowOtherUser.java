@@ -6,13 +6,13 @@ import org.testng.annotations.Test;
 import pages.HeaderPage;
 import pages.PublicPostsPage;
 
-public class GoToOtherUser extends BaseTestMethods {
+public class FollowUnfollowOtherUser extends BaseTestMethods {
     @DataProvider(name = "getData")
     public Object[][] getData() {
         return new Object[][]{{"IvaNik", "adidas"}};
     }
     @Test(dataProvider = "getData")
-    public void goToOtherUser(String username, String password) {
+    public void followOtherUser(String username, String password) {
         System.out.println("1. Load ISkillo website and login");
         pages.HomePage homePage = new pages.HomePage(driver);
         homePage.navigateTo();
@@ -44,7 +44,7 @@ public class GoToOtherUser extends BaseTestMethods {
 
         System.out.println("6. Verify All posts user btn is unable when you unfollow him");
         Boolean unableAllPostsBtn = Boolean.TRUE;
-        Assert.assertTrue(unableAllPostsBtn, "It is possible to press the button");
-
+        //da prowerq dali butona e visible - Assert.assertTrue(unableAllPostsBtn, "It is possible to press the button");
+//list s elementi da ima tekts follow
     }
 }

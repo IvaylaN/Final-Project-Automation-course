@@ -5,8 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
-import java.io.File;
 import java.util.List;
 
 public class ProfilePage extends BasePage {
@@ -29,11 +27,7 @@ public class ProfilePage extends BasePage {
     @FindBy(css = ".dropdown-container")
     WebElement dropDownBoxAfterPressedSearch;
     @FindBy(css=".post-feed-img")
-    WebElement userPost;
-    @FindBy(css = "input.form-control.ng-untouched.ng-pristine.ng-invalid")
-    WebElement fileNameField;
-    @FindBy(css = "input[type='file']")
-    WebElement profilePicture;
+    List<WebElement> userPost;
     public ProfilePage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
@@ -60,10 +54,10 @@ public class ProfilePage extends BasePage {
         clickElement(searchField);
     }
     public void waitForSearchFieldToShow() {
-        smallWait.until(ExpectedConditions.elementToBeClickable(searchField));
+        waitForVisibility(searchField);
     }
-    public void enterLetterInSearchField(){
-        searchField.sendKeys("t");
+    public void enterLetterInSearchField(String letter){
+       enterText(searchField, letter);
     }
     public void pressSearchBtn(){
         clickElement(searchBtn);
@@ -71,8 +65,8 @@ public class ProfilePage extends BasePage {
     public void waitForDropBoxToShow() {
         bigWait.until(ExpectedConditions.visibilityOf(dropDownBoxAfterPressedSearch));
     }
-    public  void chooseUserPublicPost(){
-        clickElement(userPost);
+    public  void chooseUserPublicPost(int index){
+        clickElement(userPost.get(index));
     }
 
 }

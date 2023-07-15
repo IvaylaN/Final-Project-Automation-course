@@ -12,28 +12,26 @@ Test 1 UploadFirstPost - Upload first photo (Prerequisites: It is a new profile 
 Test 2 DeleteOldPost - Delete old post (Prerequisites: there is only one picture in All posts)
 1. Load ISkillo website and login 
 2. Go to profile page
-3. Click All posts
-4. Choose one of your posts 
+3. Click All posts and show their number
+4. Choose the post 
 5. Choose delete post
 6. Choose option Yes
-7. Confirm that there are no posts
+7. Confirm that there are no posts and show their number
 
 Test 3 DislikePublicPost - It is impossible to dislike posts with logged-out user (Prerequisites: Logged-out user)
 1. Load ISkillo website
-2. Load public posts and choose one
-3. Choose one post and click on it
-4. Verify that the chosen one is visible
-5. Verify that it is impossible to press dislike button
+2. Choose one post and click on it
+3. Verify that the chosen one is visible
+4. Verify that it is impossible to press dislike button
 
 Test 4 ChangeProfileInfo - The user is able to change his information using Modify Your Profile form 
 1. Load ISkillo website and login
-2. Go to profile page
+2. Confirm log im by checking Log out btn is visible. Go to profile page
 3. Click edit info button
 4. Verify visibility of Modify your profile window is shown
 5. Fill the field Public info
 6. Click Save btn
-7. Go to profile and to modified field
-8. Verify the entered text is visible
+7. Verify the entered text is visible
 
 Test 5 SeachField - The search field is available only for the logged users
 1. Load ISkillo website and login
@@ -49,11 +47,9 @@ Test 6 Sign out - Check that user is able to Sign out
 
 Test 7 CommentPost - Comment other user post after Login in
 1. Load ISkillo website and login
-2. Go to profile page
-3. Choose and open other user post
-4. Go to comment field
-5. Enter text in Comment field
-6. Go to new comment and verify it is visible
+2. Choose and open other user post
+3. Enter text in Comment field
+4. Go to new comment and verify it is visible
 
 Test 8 GoToOtherUser -  Follow other user from public post when you are logged in
 1. Load ISkillo website and login

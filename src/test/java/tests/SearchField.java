@@ -7,10 +7,10 @@ import pages.HeaderPage;
 public class SearchField extends BaseTestMethods {
     @DataProvider(name = "getData")
     public Object[][] getData() {
-        return new Object[][]{{"IvaNik", "adidas"}};
+        return new Object[][]{{"IvaNik", "adidas", "t"}};
     }
     @Test(dataProvider = "getData")
-    public void useSearchField(String username, String password) {
+    public void useSearchField(String username, String password, String letter) {
 
         System.out.println("1. Load ISkillo website and login");
         pages.HomePage homePage = new pages.HomePage(driver);
@@ -27,10 +27,11 @@ public class SearchField extends BaseTestMethods {
         profilePage.waitForSearchFieldToShow();
 
         System.out.println("3. Enter a letter in Search field and press search btn");
-        profilePage.enterLetterInSearchField();
+        profilePage.enterLetterInSearchField(letter);
         profilePage.pressSearchBtn();
 
         System.out.println("4. Verify the results are shown");
         profilePage.waitForDropBoxToShow();
+        // da prowerq s linktekst i list
     }
 }
