@@ -4,14 +4,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
+import org.testng.Assert;
 public class CommentPostPage extends BasePage {
     @FindBy (css = ".form-control[formcontrolname ='content']" )
     WebElement fileNameField;
-//    @FindBy(css = ".col-12.comment-content")
-//    WebElement newCommentField;
-    @FindBy(xpath = "//div[contains(text(), 'So nice picture')]")
-    WebElement newComment;
+    @FindBy(css = ".comment-container")
+    WebElement newCommentField;
     public CommentPostPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
@@ -20,7 +18,10 @@ public class CommentPostPage extends BasePage {
        enterText(fileNameField, comment );
     }
     public String getNewComment(){
-        waitForVisibility(newComment);
-        return newComment.getText();
+        waitForVisibility(newCommentField);
+        return newCommentField.getText();
+    }
+    public void verifyNewComment() {
+        Assert.assertTrue(getNewComment().contains("So nice picture"));
     }
 }

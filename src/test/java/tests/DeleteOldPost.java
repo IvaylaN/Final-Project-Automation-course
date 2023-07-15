@@ -1,14 +1,11 @@
 package tests;
 
-
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.HeaderPage;
 import pages.ProfilePage;
-
 public class DeleteOldPost extends BaseTestMethods {
-    //private WebDriver driver;
     @DataProvider(name = "getData")
     public Object[][] getData() {
         return new Object[][]{{"IvaNik", "adidas"}};

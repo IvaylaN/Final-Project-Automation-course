@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.Assert;
+
 import java.util.List;
 public class PublicPostsPage extends BasePage{
     @FindBy(css=".post-feed-img")
@@ -15,20 +17,20 @@ public class PublicPostsPage extends BasePage{
     WebElement dislikeBtn;
     @FindBy(css=".post-user")
     List<WebElement> existingUsers;
-    @FindBy(css=".btn-primary.profile-edit-btn.ng-star-inserted")
-    WebElement otherUserFollowOrUnfollowBtn;
+    @FindBy(css="app-small-user-profile .btn-primary")
+    List<WebElement> otherUserFollowOrUnfollowBtn;
     @FindBy(css = ".btn-all")
     WebElement otherUserAllPostsBtn;
     @FindBy(css = ".post-modal-img")
     WebElement modalDialog;
+    @FindBy(css = ".btn-primary.profile-edit-btn")
+    WebElement followUnfollowBtn;
     public PublicPostsPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }
-    public int getCountOfPosts(){
-        return  publicPosts.size();}
     public void choosePublicPost() {
-        clickElement(onePostedPicture);
+       clickElement(onePostedPicture);
     }
     public void clickDislikeBtn() {
         clickElement(dislikeBtn);
@@ -40,13 +42,10 @@ public class PublicPostsPage extends BasePage{
         clickElement(existingUsers.get(index));
     }
     public void waitForProfileToShow() {
-        waitForVisibility(existingUsers.get(0));
+        waitForVisibility(existingUsers.get(1));
     }
     public void waitForFollowBtnOrUnfollowToShow() {
-        smallWait.until(ExpectedConditions.elementToBeClickable(otherUserFollowOrUnfollowBtn));
-    }
-    public void chooseToFollowOrUnfollowUser(){
-        clickElement(otherUserFollowOrUnfollowBtn);
+        mediumWait.until(ExpectedConditions.elementToBeClickable(otherUserFollowOrUnfollowBtn.get(1)));
     }
     public void chooseOtherUserAllPostsBtn(){
         clickElement(otherUserAllPostsBtn);
@@ -56,5 +55,8 @@ public class PublicPostsPage extends BasePage{
     }
     public void checkVisibilityOfAllPostBtn() {
         waitForVisibility(otherUserAllPostsBtn);
+    }
+    public void pressFollowUnfollowBtn(){
+        clickElement(followUnfollowBtn);
     }
 }

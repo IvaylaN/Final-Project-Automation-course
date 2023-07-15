@@ -14,7 +14,6 @@ public class UploadFirstPost extends BaseTestMethods {
     }
     @Test(dataProvider = "getData")
     public void uploadFirstPost(String username, String password, File file) {
-
         System.out.println("1. Load ISkillo website and login");
         pages.HomePage homePage = new pages.HomePage(driver);
         homePage.navigateTo();

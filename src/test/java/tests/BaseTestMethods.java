@@ -12,7 +12,6 @@ import org.testng.annotations.BeforeMethod;
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
-
 public class BaseTestMethods {
     protected WebDriver driver;
     public static final String RESOURCES_DIR = "src" + File.separator + "test" + File.separator + "resources" + File.separator;

@@ -3,7 +3,6 @@ package tests;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.HeaderPage;
-
 public class SearchField extends BaseTestMethods {
     @DataProvider(name = "getData")
     public Object[][] getData() {
@@ -32,6 +31,6 @@ public class SearchField extends BaseTestMethods {
 
         System.out.println("4. Verify the results are shown");
         profilePage.waitForDropBoxToShow();
-        // да проверя с linktext и list
+        // да проверя с linktext и list, за някой конкретно
     }
 }

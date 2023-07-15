@@ -1,6 +1,5 @@
 package tests;
 
-import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.HeaderPage;
@@ -32,7 +31,7 @@ public class CommentPost extends BaseTestMethods {
         commentPost.enterTextInCommentField(comment + "\n");
 
         System.out.println("4. Go to new comment and verify it is visible");
-        String currentText = commentPost.getNewComment();
-        Assert.assertEquals(currentText, "So nice picture", "The text is not the same");
+        commentPost.getNewComment();
+        commentPost.verifyNewComment();
     }
 }
