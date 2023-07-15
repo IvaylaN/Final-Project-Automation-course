@@ -19,6 +19,8 @@ public class PublicPostsPage extends BasePage{
     WebElement otherUserFollowOrUnfollowBtn;
     @FindBy(css = ".btn-all")
     WebElement otherUserAllPostsBtn;
+    @FindBy(css = ".post-modal-img")
+    WebElement modalDialog;
     public PublicPostsPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
@@ -48,5 +50,11 @@ public class PublicPostsPage extends BasePage{
     }
     public void chooseOtherUserAllPostsBtn(){
         clickElement(otherUserAllPostsBtn);
+    }
+    public void waitForDialogDisappear(){
+        smallWait.until(ExpectedConditions.invisibilityOf(modalDialog));
+    }
+    public void checkVisibilityOfAllPostBtn() {
+        waitForVisibility(otherUserAllPostsBtn);
     }
 }

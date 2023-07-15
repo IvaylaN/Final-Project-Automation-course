@@ -2,8 +2,6 @@ package tests;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import pages.LoginPage;
-
 public class SignOut extends BaseTestMethods {
     @DataProvider(name = "getData")
     public Object[][] getData() {

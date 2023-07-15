@@ -23,6 +23,6 @@ public class DislikePublicPosts extends BaseTestMethods {
 
         pages.LoginPage loginPage = new pages.LoginPage(driver);
         loginPage.checkURL();
-        //modala da byde zatvoren
-    }
+        //publicPosts.waitForDialogDisappear(); като натиснеш dislike модала не се затваря
+        }
 }

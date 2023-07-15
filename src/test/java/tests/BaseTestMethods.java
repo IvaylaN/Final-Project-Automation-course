@@ -18,7 +18,6 @@ public class BaseTestMethods {
     public static final String RESOURCES_DIR = "src" + File.separator + "test" + File.separator + "resources" + File.separator;
     public static final String REPORT_DIR = RESOURCES_DIR.concat("reports" + File.separator);
     public static final String SCREENSHOT_DIR = RESOURCES_DIR.concat("screenshots" + File.separator);
-
     @BeforeMethod
     public void setUp() throws IOException {
         WebDriverManager.chromedriver().setup();
@@ -29,7 +28,6 @@ public class BaseTestMethods {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(25));
     }
-
     @AfterMethod
     public void cleanUp(ITestResult testResult) {
         takeScreenShot(testResult);
@@ -37,8 +35,6 @@ public class BaseTestMethods {
             driver.close();
         }
     }
-
-
     private void cleanDirectory(String directoryPath) throws IOException {
         File directory = new File(directoryPath);
         FileUtils.cleanDirectory(directory);
@@ -49,7 +45,6 @@ public class BaseTestMethods {
             System.out.printf("Unable to delete the files in Directory:%s%n", directoryPath);
         }
     }
-
     private void takeScreenShot(ITestResult testResult) {
         if (ITestResult.FAILURE == testResult.getStatus()) {
             TakesScreenshot takesScreenshot = (TakesScreenshot) driver;

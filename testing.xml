@@ -5,12 +5,10 @@
     <classes>
         <class name="tests.UploadFirstPost"></class>
         <class name="tests.DeleteOldPost"></class>
-        <class name="tests.UploadFirstPost"></class>
-        <class name="tests.DeleteOldPost"></class>
-        <class name="tests.DislikePublicPosts"></class>
-        <class name="tests.DeleteOldPost"></class>
-        <class name="tests.ChangeProfileInfo"></class>
         <class name="tests.SignOut"></class>
+        <class name="tests.DislikePublicPosts"></class>
+        <class name="tests.SearchField"></class>
+        <class name="tests.ChangeProfileInfo"></class>
         <class name="tests.CommentPost"></class>
         <class name="tests.FollowUnfollowOtherUser"></class>
     </classes>

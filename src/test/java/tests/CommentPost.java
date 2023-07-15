@@ -4,7 +4,6 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.HeaderPage;
-
 public class CommentPost extends BaseTestMethods {
     @DataProvider(name = "getData")
     public Object[][] getData() {

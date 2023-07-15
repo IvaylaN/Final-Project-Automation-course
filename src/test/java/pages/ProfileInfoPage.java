@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.Assert;
+
 public class ProfileInfoPage extends BasePage {
     @FindBy(css = ".fa-user-edit")
     WebElement editInfoBtn;
@@ -33,10 +35,10 @@ public class ProfileInfoPage extends BasePage {
     public void pressSaveInfoBtn(){
         clickElement(saveBtn);
     }
-    public String getNewText(){
+    /*public String getNewText(){
         waitForVisibility(fieldAfterModify);
         return fieldAfterModify.getText();
-    }
+    }*/
     public void goToPublicInfoField(){
         clickElement(publicInfoField);
     }
@@ -48,6 +50,13 @@ public class ProfileInfoPage extends BasePage {
         enterText(publicInfoField, text );
     }
     public void waitForDialogDisappear(){
-      waitForVisibility(modalDialog);
+        smallWait.until(ExpectedConditions.invisibilityOf(modalDialog));
+    }
+    public String getNewComment(){
+        waitForVisibility(fieldAfterModify);
+        return fieldAfterModify.getText();
+    }
+    public void getNewProfileInfo() {
+        Assert.assertTrue(getNewComment().contains("I am happy to be here"));
     }
 }

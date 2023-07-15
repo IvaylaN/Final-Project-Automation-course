@@ -6,7 +6,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class HeaderPage extends BasePage{
-
     @FindBy(id = "homeIcon")
     WebElement logoBtn;
     @FindBy(id = "nav-link-home")

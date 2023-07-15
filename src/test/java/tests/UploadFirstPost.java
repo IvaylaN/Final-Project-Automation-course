@@ -33,11 +33,11 @@ public class UploadFirstPost extends BaseTestMethods {
 
         System.out.println("3. Go to All posts");
         ProfilePage profilePage = new ProfilePage(driver);
-        profilePage.allPosts();
+        profilePage.goToAllPosts();
 
         System.out.println("4. Check that there is no posts in All posts");
         int existingAllPosts = profilePage.getCountOfPosts();
-        System.out.println("The number of All posts is: " + existingAllPosts);
+        System.out.println("The number of All posts before changes is: " + existingAllPosts);
 
         System.out.println("5. Go to Private posts");
 
@@ -60,7 +60,7 @@ public class UploadFirstPost extends BaseTestMethods {
         int currentPostCount = profilePage.getCountOfPosts();
         Assert.assertEquals(currentPostCount, existingPrivatePosts + 1, "Incorrect post number");
         System.out.println("The number of posts is: " + currentPostCount);
-        //da proverq i all posts
+        //да проверя и all posts - нещо се чупи като се върна
     }
 }
 

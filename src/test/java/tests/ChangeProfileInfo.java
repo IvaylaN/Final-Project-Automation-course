@@ -1,7 +1,5 @@
 package tests;
 
-import org.openqa.selenium.By;
-import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.HeaderPage;
@@ -49,7 +47,6 @@ public class ChangeProfileInfo extends BaseTestMethods {
 
         System.out.println("7. Verify the entered text is visible");
         profileInfo.waitForDialogDisappear();
-        String currentText = profileInfo.getNewText();
-        //AssertContain("I am happy to be here", "The text is not the same");
+        profileInfo.getNewProfileInfo();
     }
 }

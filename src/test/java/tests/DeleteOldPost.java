@@ -32,7 +32,7 @@ public class DeleteOldPost extends BaseTestMethods {
 
         System.out.println("3. Click all posts and show their number");
         ProfilePage profilePage = new ProfilePage(driver);
-        profilePage.allPosts();
+        profilePage.goToAllPosts();
 
         int currentPostCount = profilePage.getCountOfPosts();
         System.out.println("The number of posts is: " + currentPostCount);
@@ -47,7 +47,7 @@ public class DeleteOldPost extends BaseTestMethods {
         profilePage.confirmDelete();
 
         System.out.println("7. Confirm that there are no posts and show their number");
-        profilePage.allPosts();
+        profilePage.goToAllPosts();
         int existingPosts = profilePage.getCountOfPosts();
 
         Assert.assertEquals(existingPosts,currentPostCount  - 1, "Incorrect post number");

@@ -38,13 +38,13 @@ public class FollowUnfollowOtherUser extends BaseTestMethods {
         publicPostsPage.chooseToFollowOrUnfollowUser();
         publicPostsPage.chooseOtherUserAllPostsBtn();
 
-        System.out.println("5. Unfollow the user and go to his All posts");
+        System.out.println("5. Unfollow the user");
         publicPostsPage.chooseToFollowOrUnfollowUser();
-        publicPostsPage.chooseOtherUserAllPostsBtn();
+        //publicPostsPage.chooseOtherUserAllPostsBtn();
 
         System.out.println("6. Verify All posts user btn is unable when you unfollow him");
-        Boolean unableAllPostsBtn = Boolean.TRUE;
-        //da prowerq dali butona e visible - Assert.assertTrue(unableAllPostsBtn, "It is possible to press the button");
-//list s elementi da ima tekts follow
+        publicPostsPage.checkVisibilityOfAllPostBtn();
+
+        //лист с елементи, да има текст follow - добавен prerequisites
     }
 }

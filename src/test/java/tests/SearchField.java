@@ -32,6 +32,6 @@ public class SearchField extends BaseTestMethods {
 
         System.out.println("4. Verify the results are shown");
         profilePage.waitForDropBoxToShow();
-        // da prowerq s linktekst i list
+        // да проверя с linktext и list
     }
 }
