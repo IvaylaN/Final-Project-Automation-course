@@ -29,7 +29,7 @@ public class ProfileInfoPage extends BasePage {
     public void clickEditInfoBtn() {
         clickElement(editInfoBtn);
     }
-    public void checkWindow() {
+    public void waitForModifyModal() {
         waitForVisibility(checkWindow);
     }
     public void pressSaveInfoBtn(){
@@ -52,7 +52,7 @@ public class ProfileInfoPage extends BasePage {
         waitForVisibility(fieldAfterModify);
         return fieldAfterModify.getText();
     }
-    public void getNewProfileInfo() {
-        Assert.assertTrue(getNewComment().contains("I am happy to be here"));
+    public void getNewProfileInfo(String text) {
+        Assert.assertTrue(getNewComment().contains(text));
     }
 }

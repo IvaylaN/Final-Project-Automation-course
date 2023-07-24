@@ -36,7 +36,7 @@ public class ChangeProfileInfo extends BaseTestMethods {
         profileInfo.clickEditInfoBtn();
 
         System.out.println("4. Verify visibility of Modify your profile window is shown");
-        profileInfo.checkWindow();
+        profileInfo.waitForModifyModal();
 
         System.out.println("5. Fill the field Public info");
         profileInfo.goToPublicInfoField();
@@ -47,6 +47,6 @@ public class ChangeProfileInfo extends BaseTestMethods {
 
         System.out.println("7. Verify the entered text is visible");
         profileInfo.waitForDialogDisappear();
-        profileInfo.getNewProfileInfo();
+        profileInfo.getNewProfileInfo("I am happy to be here");
     }
 }

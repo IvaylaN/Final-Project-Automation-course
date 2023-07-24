@@ -21,7 +21,7 @@ public class CommentPostPage extends BasePage {
         waitForVisibility(newCommentField);
         return newCommentField.getText();
     }
-    public void verifyNewComment() {
-        Assert.assertTrue(getNewComment().contains("So nice picture"));
+    public void verifyNewComment(String text) {
+        Assert.assertTrue(getNewComment().contains(text));
     }
 }
