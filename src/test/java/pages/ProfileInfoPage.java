@@ -6,7 +6,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
-
 public class ProfileInfoPage extends BasePage {
     @FindBy(css = ".fa-user-edit")
     WebElement editInfoBtn;
