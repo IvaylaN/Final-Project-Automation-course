@@ -47,6 +47,6 @@ public class ChangeProfileInfo extends BaseTestMethods {
 
         System.out.println("7. Verify the entered text is visible");
         profileInfo.waitForDialogDisappear();
-        profileInfo.getNewProfileInfo("I am happy to be here");
+        profileInfo.getNewProfileInfo(text);
     }
 }

@@ -60,7 +60,6 @@ public class UploadFirstPost extends BaseTestMethods {
         Assert.assertEquals(currentPostCount, existingPrivatePosts + 1, "Incorrect post number");
         System.out.println("The number of posts is: " + currentPostCount);
         //да проверя и all posts - нещо се чупи като се върна
-        //test
     }
 }
 
