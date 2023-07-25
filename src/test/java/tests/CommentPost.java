@@ -1,5 +1,6 @@
 package tests;
 
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.HeaderPage;
@@ -32,6 +33,6 @@ public class CommentPost extends BaseTestMethods {
 
         System.out.println("4. Go to new comment and verify it is visible");
         commentPost.getNewComment();
-        commentPost.verifyNewComment();
+        commentPost.verifyNewComment(comment);
     }
 }

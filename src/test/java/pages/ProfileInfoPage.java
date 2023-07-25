@@ -6,7 +6,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
-
 public class ProfileInfoPage extends BasePage {
     @FindBy(css = ".fa-user-edit")
     WebElement editInfoBtn;
@@ -29,7 +28,7 @@ public class ProfileInfoPage extends BasePage {
     public void clickEditInfoBtn() {
         clickElement(editInfoBtn);
     }
-    public void checkWindow() {
+    public void waitForModifyModal() {
         waitForVisibility(checkWindow);
     }
     public void pressSaveInfoBtn(){
@@ -52,7 +51,7 @@ public class ProfileInfoPage extends BasePage {
         waitForVisibility(fieldAfterModify);
         return fieldAfterModify.getText();
     }
-    public void getNewProfileInfo() {
-        Assert.assertTrue(getNewComment().contains("I am happy to be here"));
+    public void getNewProfileInfo(String text) {
+        Assert.assertTrue(getNewComment().contains(text));
     }
 }

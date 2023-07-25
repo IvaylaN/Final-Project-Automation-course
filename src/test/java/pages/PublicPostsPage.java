@@ -5,8 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.testng.Assert;
-
 import java.util.List;
 public class PublicPostsPage extends BasePage{
     @FindBy(css=".post-feed-img")
@@ -42,10 +40,10 @@ public class PublicPostsPage extends BasePage{
         clickElement(existingUsers.get(index));
     }
     public void waitForProfileToShow() {
-        waitForVisibility(existingUsers.get(1));
+        waitForVisibility(existingUsers.get(0));
     }
     public void waitForFollowBtnOrUnfollowToShow() {
-        mediumWait.until(ExpectedConditions.elementToBeClickable(otherUserFollowOrUnfollowBtn.get(1)));
+        mediumWait.until(ExpectedConditions.elementToBeClickable(otherUserFollowOrUnfollowBtn.get(0)));
     }
     public void chooseOtherUserAllPostsBtn(){
         clickElement(otherUserAllPostsBtn);

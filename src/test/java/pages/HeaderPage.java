@@ -5,8 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 public class HeaderPage extends BasePage{
-    @FindBy(id = "homeIcon")
-    WebElement logoBtn;
     @FindBy(id = "nav-link-home")
     WebElement homeBtn;
     @FindBy(id = "nav-link-profile")
@@ -20,9 +18,6 @@ public class HeaderPage extends BasePage{
     public HeaderPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
-    }
-    public void clickToLogo(){
-        clickElement(logoBtn);
     }
     public void goToProfile(){
         clickElement(profileBtn);

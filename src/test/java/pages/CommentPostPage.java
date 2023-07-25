@@ -15,13 +15,13 @@ public class CommentPostPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
     public void enterTextInCommentField(String comment) {
-       enterText(fileNameField, comment );
+       enterText(fileNameField, comment);
     }
     public String getNewComment(){
         waitForVisibility(newCommentField);
         return newCommentField.getText();
     }
-    public void verifyNewComment() {
-        Assert.assertTrue(getNewComment().contains("So nice picture"));
+    public void verifyNewComment(String comment) {
+        Assert.assertTrue(getNewComment().contains(comment));
     }
 }

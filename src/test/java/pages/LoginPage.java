@@ -6,8 +6,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 public class LoginPage extends BasePage {
     private final String URLLogin = "http://training.skillo-bg.com/users/login";
-    @FindBy(css = "form .h4")
-    WebElement signInText;
     @FindBy(name = "usernameOrEmail")
     WebElement userNameField;
     @FindBy(name = "password")
@@ -25,7 +23,7 @@ public class LoginPage extends BasePage {
     public void enterUsername(String username) {
         enterText(userNameField, username);
     }
-   public void enterPassword(String password) {
+    public void enterPassword(String password) {
         enterText(passField, password);
     }
     public void clickSignIn() {
